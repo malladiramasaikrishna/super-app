@@ -15,7 +15,7 @@ const WeatherWidget = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Fetch Weather based on Geolocation or default location
+  // Fetch Weather 
   useEffect(() => {
     const getWeather = async (lat, lon) => {
       setLoading(true);
@@ -36,7 +36,7 @@ const WeatherWidget = () => {
         }
       );
     } else {
-      getWeather(); // Fallback to default if Geolocation not supported
+      getWeather(); 
     }
   }, []);
 

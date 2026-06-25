@@ -42,7 +42,7 @@ export const fetchWeather = async (lat = 28.6139, lon = 77.2090) => {
     };
   } catch (error) {
     console.warn('Failed to fetch real-time weather, using mock data:', error);
-    // Return high quality mock data matching user screenshots (Image 3)
+    // mock data for testing 
     return {
       temp: 24,
       humidity: 83,

@@ -36,7 +36,7 @@ const Categories = () => {
 
   return (
     <div className="categories-page">
-      {/* Left Column - Details & Selection Pills */}
+      {/* Left Column - Details  */}
       <div className="categories-left">
         <div className="categories-left-header">
           <h1 className="app-logo">Super app</h1>

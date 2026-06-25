@@ -6,7 +6,7 @@ import Dashboard from '../pages/Dashboard';
 import Movies from '../pages/Movies';
 import { useStore } from '../store/useStore';
 
-// ProtectedRoute ensures users cannot access dashboard or movies without registration or categories
+// ProtectedRoute ensures users registration or categories
 const ProtectedRoute = ({ children, requireCategories = false }) => {
   const { user, selectedCategories } = useStore();
 

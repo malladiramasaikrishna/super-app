@@ -1,7 +1,4 @@
-// =========================================================================
-// 🔑 INSERT YOUR OMDB API KEY HERE
-// =========================================================================
-// Replace 'YOUR_API_KEY_HERE' with your actual API key from omdbapi.com
+
 const MY_OMDB_API_KEY = 'YOUR_API_KEY_HERE'; 
 
 const SEARCH_MAP = {
@@ -20,10 +17,8 @@ const SEARCH_MAP = {
 const FALLBACK_POSTER = 'https://via.placeholder.com/300x450/1a1a2e/e0e0e0?text=No+Poster';
 const FALLBACK_BACKDROP = 'https://via.placeholder.com/1280x720/1a1a2e/e0e0e0?text=No+Backdrop';
 
-/**
- * Fetches popular movies dynamically from OMDb API for a specific category.
- * Falls back to local database if the API call fails or is unconfigured.
- */
+// fetching movies from OMBD API based
+
 export const fetchMoviesByCategory = async (category, customApiKey) => {
   // Priority: 1. UI custom input key -> 2. MY_OMDB_API_KEY defined above -> 3. .env environment variable
   const hardcodedKey = MY_OMDB_API_KEY !== 'YOUR_API_KEY_HERE' ? MY_OMDB_API_KEY : '';
@@ -50,7 +45,7 @@ export const fetchMoviesByCategory = async (category, customApiKey) => {
       // Pick first 4 movies from search results
       const moviesList = data.Search.slice(0, 4);
 
-      // Fetch plot details, runtimes, and ratings for each movie in parallel
+      // Fetch plot details
       const detailedMovies = await Promise.all(
         moviesList.map(async (movie) => {
           try {
@@ -109,10 +104,7 @@ export const getAllMovies = () => {
   return Object.values(movieCatalog).flat();
 };
 
-// =========================================================================
-// 📦 LOCAL DATABASE CATALOG
-// =========================================================================
-// Uses real OMDb poster URLs so images display reliably without an API key.
+
 export const movieCatalog = {
   Action: [
     {

@@ -138,7 +138,7 @@ const TimerWidget = () => {
   const displaySecs = currentSeconds % 60;
 
   // Circular progress stroke math
-  // Circumference = 2 * PI * r = 2 * 3.14159 * 45 = 282.74 -> 283
+  
   const circumference = 283;
   const strokeOffset = totalSeconds > 0 
     ? circumference - (currentSeconds / totalSeconds) * circumference 

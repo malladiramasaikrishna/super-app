@@ -222,7 +222,7 @@ const Movies = () => {
         })}
       </div>
 
-      {/* Movie Detail Modal Overlay */}
+      {/* Movie Detail  */}
       {activeMovie && (
         <MovieModal
           movie={activeMovie}
